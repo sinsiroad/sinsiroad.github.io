@@ -1,26 +1,21 @@
  <!-- jQuery Version 1.11.0 -->
-    <script src="{{ "/javascripts/jquery-1.11.0.js" }}"></script>
+    <script src="{{ "/static/javascripts/jquery-1.11.0.js" }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ "/javascripts/bootstrap.min.js" }}"></script>
+    <script src="{{ "/static/javascripts/bootstrap.min.js" }}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="{{ "/javascripts/jquery.easing.min.js" }}"></script>
-    <script src="{{ "/javascripts/classie.js" }}"></script>
-    <script src="{{ "/javascripts/cbpAnimatedHeader.js" }}"></script>
+    <script src="{{ "/static/javascripts/jquery.easing.min.js" }}"></script>
+    <script src="{{ "/static/javascripts/classie.js" }}"></script>
+    <script src="{{ "/static/javascripts/cbpAnimatedHeader.js" }}"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="{{ "/javascripts/jqBootstrapValidation.js" }}"></script>
+    <script src="{{ "/static/javascripts/jqBootstrapValidation.js" }}"></script>
     {% if site.contact == "static" %}
-    <script src="{{ "/javascripts/contact_me_static.js" }}"></script>
+    <script src="{{ "/static/javascripts/contact_me_static.js" }}"></script>
     {% else %}
-     <script src="{{ "/javascripts/contact_me.js" }}"></script>
+     <script src="{{ "/static/javascripts/contact_me.js" }}"></script>
     {% endif %}
 
     <!-- Custom Theme JavaScript -->
-    <script src="{{ "/javascripts/freelancer.js" }}"></script>
-
-    {% if site.contact == "disqus" %}
-    <!-- Disqus Stuff -->
-    {% include js_disqus.html %}
-    {% endif %}
+    <script src="{{ "/static/javascripts/freelancer.js" }}"></script>
