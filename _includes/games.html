@@ -1,26 +1,24 @@
-
-    <!-- Games Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>{{ page.strings.games }}</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                {% for post in site.posts %}
-                    <div class="col-sm-4 portfolio-item">
-                        <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <i class="fa fa-search-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="/static/images/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
-                        </a>
-                    </div>
-                {% endfor %}
+<section id="games">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>{{ page.strings.games }}</h2>
+                <hr class="star-primary">
             </div>
         </div>
-    </section>
+        <div class="row">
+            {% for game in page.games %}
+                <div class="col-sm-4 game-item">
+                    <a href="#portfolioModal-{{ game.id }}" class="game-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="/static/images/games/{{ game.id }}.png" class="img-responsive" alt="{{ game.title }}">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

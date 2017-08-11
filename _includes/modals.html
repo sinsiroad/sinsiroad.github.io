@@ -1,40 +1,41 @@
- <!-- Portfolio Modals -->
- {% for post in site.posts %}
-    <div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>{{ post.title }}</h2>
-                            <hr class="star-primary">
-                            <img src="/static/images/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
-                            <p>{{ post.description }}</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">{{ post.client }}</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">{{ post.project-date }}</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">{{ post.category }}</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{% for game in page.games %}
+<div class="game-modal modal fade" id="portfolioModal-{{ game.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl">
         </div>
+      </div>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <h2>{{ game.title }}</h2>
+            <hr class="star-primary">
+            <img src="/static/images/games/{{ game.id }}.png" class="img-responsive img-centered" alt="{{ game.title }}">
+            <p>{{ game.description }}</p>
+            <ul class="list-inline item-details">
+              <li>{{ page.strings.genre }}:&nbsp;
+                <strong>{{ game.genre }}</strong>
+              </li>
+              <li>{{ page.strings.published }}:&nbsp;
+                <strong>{{ game.published }}</strong>
+              </li>
+            </ul>
+            <ul class="list-inline item-details">
+              {% if game.googleplay %}
+              <li><a href="{{ game.googleplay }}"><img src="/static/images/download-googleplay.png"></a></li>
+              {% endif %}
+              {% if game.appstore %}
+              <li><a href="{{ game.appstore }}"><img src="/static/images/download-appstore.png"></a></li>
+              {% endif %}
+            </ul>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endfor %}
